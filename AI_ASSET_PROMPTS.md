@@ -5,13 +5,28 @@ This guide provides detailed, copy-paste-ready prompts for generating complete c
 
 ---
 
+## **⚠️ TRANSPARENCY REQUIREMENTS - READ THIS FIRST**
+
+Different asset types have different background requirements:
+
+| Asset Type | Background Requirement | Reason |
+|------------|----------------------|--------|
+| **Concept Art** | White background OK | Reference only, NOT used in game |
+| **Face Portraits** | Transparent OR solid color (transparent recommended) | Optional - both work in RPG Maker |
+| **Walking Sprites** | MUST be transparent | Required - characters walk on various map backgrounds |
+| **Battle Sprites** | MUST be transparent | Required - appear over battle backgrounds |
+
+**TL;DR**: Use **TRANSPARENT PNG backgrounds** for all in-game assets (faces, walking sprites, battle sprites). Only concept art can have a white background because it's reference only.
+
+---
+
 ## **Character Asset Generation Order**
 
 Generate assets in this recommended order:
-1. **Concept Art** (optional reference)
-2. **Face Portraits** (easiest, helps establish style)
-3. **Walking Sprite** (medium difficulty)
-4. **Battle Sprite** (most complex)
+1. **Concept Art** (optional reference - white background OK)
+2. **Face Portraits** (easiest - transparent recommended)
+3. **Walking Sprite** (medium difficulty - MUST be transparent)
+4. **Battle Sprite** (most complex - MUST be transparent)
 
 ---
 
@@ -19,6 +34,8 @@ Generate assets in this recommended order:
 
 ### Purpose
 Create reference art to maintain consistency across all other assets.
+
+**IMPORTANT**: This is REFERENCE ONLY and NOT used in the game. White background is fine here.
 
 ### AI Prompt Template
 ```
@@ -39,8 +56,9 @@ Create a character reference sheet for an RPG character. Full-body front view, s
 
 ### Post-Generation Instructions
 1. Save this file as `concept-CharacterName.png` in a reference folder (NOT in game directories)
-2. Use this as visual reference for all subsequent asset generation
-3. Note the exact colors used for consistency
+2. **This file is NOT used in-game** - it's only for your reference when generating other assets
+3. Use this as visual reference for all subsequent asset generation
+4. Note the exact colors used for consistency
 
 ---
 
@@ -50,7 +68,10 @@ Create a character reference sheet for an RPG character. Full-body front view, s
 - **Exact Dimensions**: 576 width × 288 height pixels
 - **Grid Layout**: 4 columns × 2 rows = 8 face positions
 - **Individual Face Size**: 144 × 144 pixels each
-- **File Format**: PNG (can have background or transparent)
+- **File Format**: PNG
+- **Background**: OPTIONAL - can be transparent OR have solid color/gradient background
+  - **Recommended**: Transparent PNG for consistency with other assets
+  - **Also works**: Solid color or gradient background (dark colors work best)
 - **Content**: 8 different facial expressions
 
 ### Grid Layout Reference
@@ -69,14 +90,18 @@ The 8 portraits must show these exact expressions in this exact order:
 - Top row, left to right: Neutral expression, Happy/smiling, Sad/downcast, Angry/fierce
 - Bottom row, left to right: Surprised/shocked, Worried/concerned, Determined/serious, Very shocked/gasping
 
-Art style: Anime/JRPG character portrait style, shoulder-up or bust shot, consistent character design across all 8 faces, only facial expression changes between portraits. Background can be solid color or subtle gradient.
+Art style: Anime/JRPG character portrait style, shoulder-up or bust shot, consistent character design across all 8 faces, only facial expression changes between portraits.
 
-Technical requirements: PNG format, can have background, each face exactly 144x144 pixels, total canvas exactly 576x288 pixels, no borders or gaps between portraits, pixel-perfect grid alignment.
+Background options: CHOOSE ONE:
+- Option A (recommended): Transparent PNG background
+- Option B: Dark solid color or subtle gradient background (if using this, specify the color)
+
+Technical requirements: PNG format, each face exactly 144x144 pixels, total canvas exactly 576x288 pixels, no borders or gaps between portraits, pixel-perfect grid alignment.
 ```
 
 ### Example Prompts
 
-**Cyberpunk Medic Portrait Sheet**:
+**Cyberpunk Medic Portrait Sheet** (with transparent background - recommended):
 ```
 Create an RPG character portrait sprite sheet with EXACT dimensions 576 pixels wide by 288 pixels tall. The sheet must contain exactly 8 character face portraits arranged in a perfect 4x2 grid (4 columns, 2 rows). Each individual portrait must be exactly 144x144 pixels with NO gaps or padding between portraits.
 
@@ -86,12 +111,18 @@ The 8 portraits must show these exact expressions in this exact order:
 - Top row, left to right: Neutral professional expression, Happy confident smile, Sad concerned look, Angry fierce glare
 - Bottom row, left to right: Surprised wide eyes, Worried anxious expression, Determined serious focused look, Very shocked gasping
 
-Art style: Anime/JRPG character portrait style, shoulder-up view showing head and upper shoulders, consistent character design across all 8 faces, only facial expression changes between portraits. Background: dark gray gradient.
+Art style: Anime/JRPG character portrait style, shoulder-up view showing head and upper shoulders, consistent character design across all 8 faces, only facial expression changes between portraits.
 
-Technical requirements: PNG format, dark background, each face exactly 144x144 pixels, total canvas exactly 576x288 pixels, no borders or gaps between portraits, pixel-perfect grid alignment.
+Technical requirements: PNG format with TRANSPARENT background, each face exactly 144x144 pixels, total canvas exactly 576x288 pixels, no borders or gaps between portraits, pixel-perfect grid alignment.
 ```
 
-**Street Samurai Portrait Sheet**:
+**Alternative version with dark background** (also acceptable):
+```
+[Same as above, but change the last line to:]
+Technical requirements: PNG format with dark gray gradient background, each face exactly 144x144 pixels, total canvas exactly 576x288 pixels, no borders or gaps between portraits, pixel-perfect grid alignment.
+```
+
+**Street Samurai Portrait Sheet** (with transparent background - recommended):
 ```
 Create an RPG character portrait sprite sheet with EXACT dimensions 576 pixels wide by 288 pixels tall. The sheet must contain exactly 8 character face portraits arranged in a perfect 4x2 grid (4 columns, 2 rows). Each individual portrait must be exactly 144x144 pixels with NO gaps or padding between portraits.
 
@@ -101,9 +132,9 @@ The 8 portraits must show these exact expressions in this exact order:
 - Top row, left to right: Neutral stoic expression, Happy slight smirk, Sad regretful frown, Angry intense scowl
 - Bottom row, left to right: Surprised raised eyebrow, Worried tense look, Determined battle-ready focus, Very shocked eyes wide
 
-Art style: Anime/JRPG character portrait style, shoulder-up view showing head and upper shoulders, consistent character design across all 8 faces, only facial expression changes between portraits. Background: dark blue-gray gradient.
+Art style: Anime/JRPG character portrait style, shoulder-up view showing head and upper shoulders, consistent character design across all 8 faces, only facial expression changes between portraits.
 
-Technical requirements: PNG format, dark background, each face exactly 144x144 pixels, total canvas exactly 576x288 pixels, no borders or gaps between portraits, pixel-perfect grid alignment.
+Technical requirements: PNG format with TRANSPARENT background, each face exactly 144x144 pixels, total canvas exactly 576x288 pixels, no borders or gaps between portraits, pixel-perfect grid alignment.
 ```
 
 ### Post-Generation Checklist
@@ -114,6 +145,7 @@ Technical requirements: PNG format, dark background, each face exactly 144x144 p
 - [ ] All 8 faces show the same character with different expressions
 - [ ] Character design is consistent (hair, clothing, features don't change)
 - [ ] File is PNG format
+- [ ] Background is either transparent OR solid color (both acceptable, transparent recommended)
 
 ### Saving
 - **Filename**: `CharacterName.png` (e.g., `CyberMedic.png`)
@@ -134,7 +166,8 @@ Technical requirements: PNG format, dark background, each face exactly 144x144 p
   - Row 2: Left-facing (3 frames)
   - Row 3: Right-facing (3 frames)
   - Row 4: Up-facing (3 frames)
-- **File Format**: PNG with transparent background
+- **File Format**: PNG
+- **Background**: MUST BE TRANSPARENT (required for walking sprites)
 
 ### Walking Animation Frame Details
 Each character has 12 frames total (3 frames × 4 directions):
@@ -269,7 +302,8 @@ Technical requirements:
 - **Exact Dimensions**: 576 width × 384 height pixels
 - **Grid Layout**: 9 columns × 6 rows = 54 frames
 - **Individual Frame**: 64 × 64 pixels
-- **File Format**: PNG with transparent background
+- **File Format**: PNG
+- **Background**: MUST BE TRANSPARENT (required for battle sprites)
 - **Frames per Motion**: 3 animation frames (horizontal)
 - **Total Motions**: 18 different battle actions
 
@@ -682,10 +716,11 @@ Character: Female cyberpunk hacker "Nova", age 22, purple mohawk with neon pink 
 
 The 8 portraits show: Neutral smirk, Happy grin, Sad frown, Angry scowl, Surprised wide eyes, Worried anxious, Determined focused, Very shocked gasping.
 
-Art style: Anime/JRPG portrait, shoulder-up view, dark background with subtle purple glow.
+Art style: Anime/JRPG portrait, shoulder-up view, consistent character across all 8 faces.
 
-Technical: PNG, each face 144x144px, total 576x288px, no gaps, pixel-perfect grid.
+Technical: PNG with TRANSPARENT background, each face 144x144px, total 576x288px, no gaps, pixel-perfect grid.
 ```
+Save as: `Nova.png` in `img/faces/`
 
 ### 3. Walking Sprite (Single Character)
 ```
